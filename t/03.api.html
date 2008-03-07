@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>jQuery Form DateTime API</title>
+    <script type="text/javascript" src="lib/Test/Builder.js"></script>
+    <script type="text/javascript" src="lib/Test/More.js"></script>
+    <script type="text/javascript" src="lib/jquery-1.2.3.min.js"></script>
+    <script type="text/javascript" src="../lib/jquery-form.js"></script>
+    <script type="text/javascript" src="../lib/jquery-form-datetime.js"></script>
+  </head>
+  <body>
+    <h1>jQuery Form DateTime API</h1>
+    <form>
+      <input class="datetime" />
+    </form>
+
+    <pre id="test">
+      <script type="text/javascript">
+plan({ tests: 4 });
+
+var $cal = $("input.datetime").form({ act_as: 'datetime-calendar' });
+
+$cal.ts(1);
+
+var d1 = $cal.date();
+
+ok( 1970 == d1.getFullYear() );
+ok( 0 == d1.getMonth() );
+ok( 1 == d1.getDate() );
+
+var d2 = new Date();
+d2.setTime( Date.parse("1980/05/08 00:00:00") );
+
+$cal.date(d2);
+
+is( 326563200, parseInt($cal.ts()) );
+
+
+      </script>
+    </pre>
+
+    <address>
+      <a href="mailto:gugod@gugod.org">Liu Kang-min</a>
+    </address>
+  </body>
+</html>

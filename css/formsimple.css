@@ -1,0 +1,56 @@
+/* =Form
+----------------------------------------------- */
+/* form.simple */
+form.simple {
+    width:100%;
+    overflow:hidden;
+}
+form.simple br {
+    clear:left;
+}
+form.simple .right {
+    float:right;
+    margin: 10px 0;
+}
+form.simple legend {
+    font-weight:bold;
+    font-size:116%;
+}
+form.simple fieldset {
+    padding:10px 0;
+}
+form.simple fieldset label,
+form.simple fieldset input,
+form.simple fieldset span {
+    margin:0.5em 0;
+    display:block;
+    float:left;
+    padding:0.2em 0.4em;
+}
+form.simple fieldset input[type="text"] {
+    width:12em;
+    padding:0.2em 0.4em;
+}
+form.simple fieldset label {
+    clear:left;
+    width:8em;
+    text-align:right;
+    font-weight:bold;
+    color:#666;
+}
+form.simple fieldset .desc {
+    width:19em;
+}
+form.simple fieldset .captcha .desc {
+    width:11em;
+}
+form.simple fieldset .captcha img {
+    border:1px solid #999;
+    display:block;
+    float:left;
+    margin:0.5em 0 0 0.4em;
+}
+form.simple fieldset .submit {
+    margin:0 0 0 8.8em;
+    width:12em;
+}

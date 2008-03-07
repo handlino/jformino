@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title>jquery-formtest</title>
+    <script type="text/javascript" src="lib/Test/Builder.js"></script>
+    <script type="text/javascript" src="lib/Test/More.js"></script>
+    <script type="text/javascript" src="lib/jquery-1.2.3.min.js"></script>
+    <script type="text/javascript" src="../lib/jquery-form.js"></script>
+  </head>
+  <body>
+    <p>This test shows how you can use 'params'.</p>
+    <pre id="test">
+      <script type="text/javascript">
+
+plan({ tests: 13 });
+
+$("<div/>").attr({ id: "form1" }).prependTo(document.body).form({
+    legend: "Test Purpose Form",
+    params: [
+        // only give field name, with auto-generateed label.
+        "field_one",
+        // manually assign a label
+        {
+            label: "Foo",
+            name: "foo_field"
+        },
+        // with initial value
+        {
+            label: "Bar",
+            name: "bar_field",
+            value: "42"
+        },
+        // other types
+        {
+            name: "xyz",
+            label: "XYZ",
+            type: "checkbox",
+            values: [ 42, 43, 44 ]
+        }
+    ]
+});
+
+// 4 labels
+is( $("#form1 label").size(), 4 );
+
+// exaime each label
+is( $("#form1 label").slice(0,1).text(), 'Field One' );
+is( $("#form1 label").slice(1,2).text(), 'Foo' );
+is( $("#form1 label").slice(2,3).text(), 'Bar' );
+is( $("#form1 label").slice(3,4).text(), 'XYZ' );
+
+// exaime each input field
+is( $("#form1 input[type='checkbox']").size(), 3 );
+is( $("#form1 input[type='text']").size(), 3 );
+
+is( $("#form1 input[type='text']").slice(0,1).attr("name"), 'field_one' );
+is( $("#form1 input[type='text']").slice(1,2).attr("name"), 'foo_field' );
+is( $("#form1 input[type='text']").slice(2,3).attr("name"), 'bar_field' );
+
+is( $("#form1 input[type='checkbox']").slice(0,1).attr("name"), 'xyz' );
+is( $("#form1 input[type='checkbox']").slice(1,2).attr("name"), 'xyz' );
+is( $("#form1 input[type='checkbox']").slice(2,3).attr("name"), 'xyz' );
+
+
+      </script>
+    </pre>
+  </body>
+</html>

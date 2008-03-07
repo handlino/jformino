@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <title>jquery-form datetime picker</title>
+    <script type="text/javascript" src="lib/jquery-1.2.js"></script>
+    <script type="text/javascript" src="../lib/jquery-form.js"></script>
+    <script type="text/javascript" src="../lib/jquery-dimensions.js"></script>
+    <script type="text/javascript" src="../lib/jquery-form-datetime.js"></script>
+    <style type="text/css">
+      @import "formsimple.css";
+      @import "jquery-form-datetime.css";
+    </style>
+  </head>
+  <body>
+    <h1>jquery-form datetime picker</h1>
+    <div id="message"></div>
+    <div id="form1"></div>
+
+    <script type="text/javascript">
+    $("#form1").form({
+        legend: 'Datetime demo',
+        params: [
+            {
+                label: 'Time HH::MM Select ',
+                name: 't',
+                type: 'time-hm-select',
+                value: '12:00'
+            },
+            {
+                label: 'Time (15m) ',
+                name: 't2',
+                type: 'time-hm-select',
+                value: '12:15',
+                interval: '15m'
+            },
+            {
+                label: 'Date One', name: 'd1', type: 'date-calendar'
+            },
+            {
+                label: 'Date Time', name: 'd2', type: 'datetime-calendar'
+            },
+            {
+                label: 'Time Scroller', name: 't3', type: 'time-hm-scroll'
+            },
+            {
+                label: 'DateTime Scroller', name: 'dt4', type: 'datetime-scroll'
+            }
+        ],
+        buttons: [
+            {
+                "type": "submit",
+                "label": "Go",
+                "value": "go"
+            },
+            {
+                "type": "reset",
+                "label": "Reset"
+            }
+       ]
+    }).submit(function() {
+        $("#message").html("You just submit that form:<pre>" + $(this).serialize() + "</pre>");
+        return false;
+    });
+    </script>
+  </body>
+</html>

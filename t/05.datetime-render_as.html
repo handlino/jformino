@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <title>jQuery Form DateTime should also be able to yield Date string</title>
+    <script type="text/javascript" src="lib/Test/Builder.js"></script>
+    <script type="text/javascript" src="lib/Test/More.js"></script>
+    <script type="text/javascript" src="lib/jquery-1.2.3.min.js"></script>
+    <script type="text/javascript" src="../lib/jquery-form.js"></script>
+    <script type="text/javascript" src="../lib/jquery-form-datetime.js"></script>
+
+    <style type="text/css">
+      @import "../css/jquery-form-datetime.css";
+    </style>
+  </head>
+  <body>
+
+    <form class="simple">
+      <input class="datetime" />
+    </form>
+
+    <pre id="test">
+      <script type="text/javascript">
+
+var padding = function(v) {
+    if (Number(v) < 10)
+        return "0" + String(v);
+    return String(v);
+};
+
+var $cal = $("input.datetime").form({
+    'act_as': 'datetime-calendar',
+    'render_as': function( ts ) {
+        var d = new Date();
+        d.setTime( ts * 1000 );
+        
+        /* 2008/03/19 10:00 AM */
+        var str = d.getFullYear() + "/" + padding(d.getMonth() + 1) + "/" + padding(d.getDate());
+        var hour = d.getHours();
+        var ampm = "AM";
+        if (hour >= 12) {
+            ampm = "PM";
+            hour -= ( hour > 12 ) ? 12: 0;
+        }
+        var time_str = padding( hour ) + ":" + padding( d.getMinutes() ) + " " + ampm;
+
+        return str + " " + time_str;
+    }
+});
+
+plan({ tests: 10 });
+var max = Date.now();
+for(var i = 0; i < 10; i++) {
+    $cal.ts( parseInt( Math.random() * Date.now() ) );
+    var str = $cal.val();
+    ok( str.match(/^\d+\d\d\d\/\d\d\/\d\d \d\d:\d\d [AP]M/), str );
+}
+
+      </script>
+    </pre>
+
+    <address><a href="mailto:gugod@gugod.org">Liu Kang-min</a></address>
+  </body>
+</html>

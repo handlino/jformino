@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>jQuery-Form Datetime Input</title>
+    <style type="text/css">
+      @import "../css/formsimple.css";
+      @import "../css/jquery-form-datetime.css";
+    </style>
+  </head>
+  <body>
+    <h1>jQuery-Form Datetime Input</h1>
+
+    <form>
+      <div>
+        <label>Start At</label>
+        <input name="start_at">
+      </div>
+
+      <div>
+        <label>End At</label>
+        <input name="end_at">
+      </div>
+
+      <div>
+        <input type="submit" />
+      </div>
+    </form>
+
+    <address>
+      <a href="mailto:gugod@gugod">Liu Kang-min</a>
+    </address>
+
+
+    <script type="text/javascript" src="../t/lib/jquery-1.2.3.min.js"> </script>
+    <script type="text/javascript" src="../lib/jquery-form.js"> </script>
+    <script type="text/javascript" src="../lib/jquery-form-datetime.js"> </script>
+
+    <script type="text/javascript">
+      $("input[@name='start_at']").form({ render_as: "datetime-calendar" });
+      $("input[@name='end_at']").form({ render_as: "datetime-calendar" });
+
+      $("form").submit(function() {
+      alert( $(this).serialize() );
+      return false;
+      });
+    </script>
+  </body>
+</html>

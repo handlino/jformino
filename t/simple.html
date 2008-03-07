@@ -1,0 +1,93 @@
+<html>
+  <head>
+    <title>jquery.form simple test</title>
+    <script type="text/javascript" src="lib/jquery-1.2.js"> </script>
+    <script type="text/javascript" src="../lib/jquery-form.js"> </script>
+    <style type="text/css">
+      @import "formsimple.css";
+    </style>
+  </head>
+  <body>
+    <h1>jquery.form</h1>
+    <div id="message"></div>
+    <div id="form1"></div>
+    <div id="form2"></div>
+    <script type="text/javascript">
+
+$(function() {
+
+    $("#form1").form({
+        legend: "jquery.form simple demo",
+        params: {
+            "Title": "(The Title)",
+            "name": {
+                label: "Name"
+            },
+            "ready": {
+                label: "Ready ?",
+                type: "radio",
+                values: [ "yes", "no" ]
+            },
+            "xoryorz": {
+                label: "X, Y, or Z?",
+                type: "radio",
+                values: [ "X", "Y", "Z" ]
+            },
+            "cto": {
+                label: "Check These Out",
+                type: "checkbox",
+                values: [ "Check", "These", "Out" ]
+            },
+            "favorite_food": {
+                label: "Favorite Food",
+                type: "select",
+                values: ["Ham", "Hammer", "Hamburger"]
+            }
+        },
+
+        buttons: [
+            {
+                "type": "submit",
+                "label": "Go",
+                "value": "go"
+            },
+            {
+                "type": "reset",
+                "label": "Reset"
+            }
+       ]
+    })
+    .submit(function() {
+        $("#message").html("You just submit that form:<pre>" + $(this).serialize() + "</pre>");
+        setTimeout(function() { $("#message").empty(); }, 60000);
+        return false;
+    });
+
+
+    $("#form2").form({
+        legend: "jquery.form simple demo 2",
+        params: [
+            'the_title',
+            {
+                name: 'the_name',
+                label: "The Name"
+            }
+        ],
+        buttons: [
+            {
+                "type": "submit",
+                "label": "Go",
+                "value": "go"
+            }
+       ]
+    })
+    .submit(function() {
+        $("#message").html("You just submit form2:<pre>" + $(this).serialize() + "</pre>");
+        setTimeout(function() { $("#message").empty(); }, 60000);
+        return false;
+    });
+});
+
+    </script>
+  </body>
+</html>

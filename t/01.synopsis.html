@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>jquery-formtest</title>
+    <script type="text/javascript" src="lib/Test/Builder.js"> </script>
+    <script type="text/javascript" src="lib/Test/More.js"> </script>
+    <script type="text/javascript" src="lib/jquery-1.2.3.min.js"> </script>
+    <script type="text/javascript" src="../lib/jquery-form.js"> </script>
+  </head>
+  <body>
+    <pre id="test">
+      <script type="text/javascript">
+
+plan({ tests: 4 });
+
+$("<div/>").attr({ id: "form1" }).prependTo(document.body).form({
+    legend: "Test Purpose Form",
+    params: [ "field_one" ]
+});
+
+is( $("#form1 input[@name='field_one']").size(),  1 );
+is( $("#form1 label").size(),  1 );
+is( $("#form1 label").text(),  'Field One' );
+is( $("#form1 legend").text(),  'Test Purpose Form' );
+
+      </script>
+    </pre>
+  </body>
+</html>

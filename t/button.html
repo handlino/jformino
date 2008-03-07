@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <title>jquery-form datetime custom button</title>
+    <script type="text/javascript" src="lib/jquery-1.2.js"> </script>
+    <script type="text/javascript" src="../lib/jquery-form.js"> </script>
+    <script type="text/javascript" src="../lib/jquery-form-datetime.js"> </script>
+    <style type="text/css">
+        @import "../vendor/yui/assets/calendar.css"; 
+        .calnavleft, .calnavright { text-indent: -9999px; }
+
+div.buttons {
+    margin-top: 5px;
+}
+
+a.button {
+    color: #fff;
+    font-family: Helvetica;
+    text-decoration: none;
+    border: 2px solid #fff;
+    padding: 2px 7px;
+    line-height: 1.5em;
+    display: block;
+    float: left;
+    background: #777;
+}
+a.button:hover {
+    background: #999;
+}
+
+div#message {
+    left: 240px;
+    top: 25px;
+    width: 540px;
+    position: absolute;
+    border: 2px solid #7b9ebd;
+    background: #f7f9fb;
+    padding: 5px;
+}
+    </style>
+  </head>
+  <body>
+    <div id="message">Lorem Ipsum Foobar.</div>
+    <div id="form1"></div>
+    <form class="simple">
+      <div>
+        <label>Datetime 1</label>
+        <input name="datetime-calendar" id="dtc" />
+      </div>
+      <div>
+        <input type="submit" />
+      </div>
+
+    </form>
+    <script type="text/javascript">
+
+$("#dtc").form({
+    act_as: 'datetime-calendar',
+    
+    buttons: [
+        { type: "submit",  label: "OK" },
+        { type: "cancel", label: "Nevermind" },
+        {
+            label: "Hello",
+            click: function(selected_date) {
+                $("#message").text( "Hello, you select " + selected_date.toString() );
+            }
+        }
+    ]
+});
+
+$("form").submit(function() {
+    $("#message").text( $(this).serialize() );
+});
+
+    </script>
+  </body>
+</html>

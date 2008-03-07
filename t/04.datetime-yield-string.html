@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>jQuery Form DateTime should also be able to yield Date string</title>
+    <script type="text/javascript" src="lib/Test/Builder.js"></script>
+    <script type="text/javascript" src="lib/Test/More.js"></script>
+    <script type="text/javascript" src="lib/jquery-1.2.3.min.js"></script>
+    <script type="text/javascript" src="../lib/jquery-form.js"></script>
+    <script type="text/javascript" src="../lib/jquery-form-datetime.js"></script>
+
+    <style type="text/css">
+      @import "../css/jquery-form-datetime.css";
+    </style>
+  </head>
+  <body>
+
+    <form class="simple">
+      <input name="d" class="datetime" />
+    </form>
+
+    <pre id="test">
+      <script type="text/javascript">
+plan({ tests: 1 });
+
+var $cal = $("input.datetime").form({
+    'act_as': 'datetime-calendar',
+    toString: function( ts ) {
+        var d = new Date();
+        d.setTime( ts * 1000 );
+        return d.toString();
+    }
+});
+
+$cal.ts(1);
+
+var d = new Date();
+d.setTime(1000);
+
+is( $("input").val(), d.toString() );
+
+      </script>
+    </pre>
+
+    <address><a href="mailto:gugod@gugod.org">Liu Kang-min</a></address>
+  </body>
+</html>
