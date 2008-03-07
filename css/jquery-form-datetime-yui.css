@@ -15,6 +15,7 @@ a.button {
     float: left;
     background: #777;
 }
+
 a.button:hover {
     background: #999;
 }

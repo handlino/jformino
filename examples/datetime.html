@@ -1,47 +1,75 @@
 <html>
   <head>
     <title>jQuery-Form Datetime Input</title>
-    <style type="text/css">
-      @import "../css/formsimple.css";
-      @import "../css/jquery-form-datetime.css";
-    </style>
-  </head>
-  <body>
-    <h1>jQuery-Form Datetime Input</h1>
-
-    <form>
-      <div>
-        <label>Start At</label>
-        <input name="start_at">
-      </div>
-
-      <div>
-        <label>End At</label>
-        <input name="end_at">
-      </div>
-
-      <div>
-        <input type="submit" />
-      </div>
-    </form>
-
-    <address>
-      <a href="mailto:gugod@gugod">Liu Kang-min</a>
-    </address>
-
 
     <script type="text/javascript" src="../t/lib/jquery-1.2.3.min.js"> </script>
     <script type="text/javascript" src="../lib/jquery-form.js"> </script>
     <script type="text/javascript" src="../lib/jquery-form-datetime.js"> </script>
 
-    <script type="text/javascript">
-      $("input[@name='start_at']").form({ render_as: "datetime-calendar" });
-      $("input[@name='end_at']").form({ render_as: "datetime-calendar" });
+    <style type="text/css">
+      @import "../vendor/yui/calendar/assets/calendar.css";
+      @import "../vendor/yui/calendar/assets/skins/sam/calendar-skin.css";
 
-      $("form").submit(function() {
-      alert( $(this).serialize() );
-      return false;
-      });
+      @import "../css/formsimple.css";
+      @import "../css/jquery-form-datetime-yui.css";
+
+      fieldset {
+          width: 300px;
+          float: left;
+      }
+
+    </style>
+
+
+    <script type="text/javascript">
+
+function skin(s) {
+    $(document.body).toggleClass('yui-skin-' + s);
+};
+
+$(function() {
+
+    $("input.cal").form({ act_as: "datetime-calendar" });
+
+    $("form").submit(function() {
+        alert( $(this).serialize() );
+        return false;
+    });
+})
     </script>
+
+  </head>
+  <body>
+    <h1>jQuery-Form Datetime Input</h1>
+
+    <div>
+      <a href="#" class="button" onclick="skin('sam'); return false;">Toggle "Sam" skin.</a>
+      <p>Usage: Click on the field first to get a calendar popup, then click this button.</p>
+    </div>
+
+    <div style="clear:both;">&nbsp;</div>
+
+    <form>
+      <fieldset>
+        <legend>YUI Skin</legend>
+        <div>
+          <label>Start At</label>
+          <input class="cal" name="start_at">
+        </div>
+
+        <div>
+          <label>End At</label>
+          <input class="cal" name="end_at">
+        </div>
+        <div>
+          <input type="submit" />
+        </div>
+      </fieldset>
+    </form>
+
+    <div style="clear:both;">&nbsp;</div>
+    <address>
+      <a href="mailto:gugod@gugod.org">Liu Kang-min</a>
+    </address>
   </body>
 </html>
