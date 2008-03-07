@@ -5,13 +5,18 @@
     <script type="text/javascript" src="../lib/jquery-form.js"> </script>
     <script type="text/javascript" src="../lib/jquery-form-datetime.js"> </script>
     <style type="text/css">
-        @import "../vendor/yui/assets/calendar.css"; 
-        @import "../css/formsimple.css"; 
+        @import "../vendor/yui/calendar/assets/calendar.css"; 
+        @import "../vendor/yui/calendar/assets/skins/sam/calendar-skin.css";
         @import "../css/jquery-form-datetime-yui.css"; 
     </style>
   </head>
   <body>
     <h1>jquery.form separate test</h1>
+    <div>
+      <a href="#" class="button" onclick="skin('sam'); return false;">Toggle "Sam" skin.</a>
+      <p>Usage: Click on the field first to get a calendar popup, then click this button.</p>
+    </div>
+
     <div id="form1"></div>
 
     <form id="second" class="simple">
@@ -33,6 +38,9 @@
     <div id="message"></div>
 
     <script type="text/javascript">
+function skin(s) {
+    $(document.body).toggleClass('yui-skin-' + s);
+};
 
 jQuery("#dtc").form({
     act_as: 'datetime-calendar',
