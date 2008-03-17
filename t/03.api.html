@@ -13,14 +13,14 @@
       <input class="datetime" />
     </form>
 
+    <script type="text/javascript">
+        var $cal = $("input.datetime").form({ act_as: 'datetime-calendar' });
+        $cal.ts(1);
+    </script>
+
     <pre id="test">
       <script type="text/javascript">
 plan({ tests: 4 });
-
-var $cal = $("input.datetime").form({ act_as: 'datetime-calendar' });
-
-$cal.ts(1);
-
 var d1 = $cal.date();
 
 ok( 1970 == d1.getFullYear() );
@@ -33,8 +33,6 @@ d2.setTime( Date.parse("1980/05/08 00:00:00") );
 $cal.date(d2);
 
 is( 326563200, parseInt($cal.ts()) );
-
-
       </script>
     </pre>
 

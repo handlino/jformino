@@ -16,9 +16,7 @@
     <form class="simple">
       <input class="datetime" />
     </form>
-
-    <pre id="test">
-      <script type="text/javascript">
+    <script type="text/javascript">
 
 var padding = function(v) {
     if (Number(v) < 10)
@@ -45,6 +43,17 @@ var $cal = $("input.datetime").form({
         return str + " " + time_str;
     }
 });
+
+    </script>
+
+    <pre id="test">
+      <script type="text/javascript">
+
+if (!Date.now) {
+    Date.now = function() {
+        return (new Date()).getTime();
+    };
+}
 
 plan({ tests: 10 });
 var max = Date.now();

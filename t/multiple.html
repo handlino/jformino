@@ -1,8 +1,10 @@
 <html>
   <head>
     <title>jquery-form bind datetime-calendar to mutliple elements</title>
-    <script type="text/javascript" src="lib/jquery-1.2.js"> </script>
-    <script type="text/javascript" src="../lib/jquery-form.js"> </script>
+    <script type="text/javascript" src="lib/Test/Builder.js"></script>
+    <script type="text/javascript" src="lib/Test/More.js"></script>
+    <script type="text/javascript" src="lib/jquery-1.2.3.min.js"></script>
+    <script type="text/javascript" src="../lib/jquery-form.js"></script>
     <script type="text/javascript" src="../lib/jquery-form-datetime.js"> </script>
     <style type="text/css">
         @import "../vendor/yui/calendar/assets/calendar.css"; 
@@ -53,8 +55,31 @@ $("input.dt").form({
 
 $("form").submit(function() {
     $("#message").text( $(this).serialize() );
+    return false;
 });
 
     </script>
+    <pre id="test">
+        <script type="text/javascript">
+            plan({tests: 2 * $("input.dt").size() + 1});
+
+            var $jfcc = $(".jquery-form-calendar-container");
+            is($jfcc.size(), $("input.dt").size(), "The number of calendar containers is the same as the number of input fields.");
+
+            $jfcc.each(function() {
+                ok( $(this).is(":hidden"), "initially hidden calendar container." );
+            });
+
+            $("input.dt").each(function(i) {
+                $(this).trigger("focus");
+                ok( $jfcc.eq(i).is(":visible"), "clicking the field shows the corresponding calendar." );
+            });
+
+            // Close those calendars by clicking the "Nevermind" button.
+            setTimeout(function() {
+                $jfcc.find(".buttons a:eq(1)").click();
+            }, 1000);
+        </script>
+    </pre>
   </body>
 </html>
