@@ -1,0 +1,21 @@
+
+jQuery-Form -- declarative form generation and binding.
+
+jquery-form provides on-the-fly form generation with:
+
+1. declarative syntax
+2. good default semantic
+
+It's very questionable about why people even need to generate a whole
+form all in javascript, and my saying is that this is one kind of
+future.
+
+Please visit
+
+    http://st.handlino.com/hdc/?jquery_form
+
+for all information about this jQuery plugin,
+
+Cheers,
+Kang-min Liu <gugod@gugod.org>
+

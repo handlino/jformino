@@ -1,0 +1,12 @@
+0.20:
+	- Introducing: Actor
+	- actor: datetime-calendar
+	- YUI-skin compatible class names
+	- customizable buttons
+	- customizable field values
+	- customizable field display
+	- co-routine for last-mile input filter
+
+	For more detail of changes, see http://st.handlino.com/hdc/index.cgi?jquery_form_0_20_release_note
+
+
