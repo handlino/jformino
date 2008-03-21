@@ -42,7 +42,7 @@ function skin(s) {
     $(document.body).toggleClass('yui-skin-' + s);
 };
 
-jQuery("#dtc").form({
+jQuery("#dtc").formino({
     act_as: 'datetime-calendar',
     value: 1205139600
 });
@@ -78,14 +78,14 @@ $("form#second").submit(function() {
     return false;
 });
 
-st = jQuery("#dtc2").form({
+st = jQuery("#dtc2").formino({
     act_as: 'datetime-calendar',
     value: foo_ts,
     render_as: datetime_renderer,
     toString: datetime_renderer
 });
 
-$("#form1").form({
+$("#form1").formino({
     legend: 'Datetime demo',
     params: [
         {
