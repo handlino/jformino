@@ -1,17 +1,17 @@
 <html>
   <head>
-    <title>jQuery-Form Datetime Input</title>
+    <title>jFormino Datetime Input</title>
 
     <script type="text/javascript" src="../t/lib/jquery-1.2.3.min.js"> </script>
-    <script type="text/javascript" src="../lib/jquery-form.js"> </script>
-    <script type="text/javascript" src="../lib/jquery-form-datetime.js"> </script>
+    <script type="text/javascript" src="../lib/jformino.js"> </script>
+    <script type="text/javascript" src="../lib/jformino-datetime.js"> </script>
 
     <style type="text/css">
       @import "../vendor/yui/calendar/assets/calendar.css";
       @import "../vendor/yui/calendar/assets/skins/sam/calendar-skin.css";
 
       @import "../css/formsimple.css";
-      @import "../css/jquery-form-datetime-yui.css";
+      @import "../css/jformino-datetime-yui.css";
 
       fieldset {
           width: 300px;
@@ -28,7 +28,7 @@ function skin(s) {
 
 $(function() {
 
-    $("input.cal").form({ act_as: "datetime-calendar" });
+    $("input.cal").formino({ act_as: "datetime-calendar" });
 
     $("form").submit(function() {
         alert( $(this).serialize() );
@@ -39,7 +39,7 @@ $(function() {
 
   </head>
   <body>
-    <h1>jQuery-Form Datetime Input</h1>
+    <h1>jFormino Datetime Input</h1>
 
     <div>
       <a href="#" class="button" onclick="skin('sam'); return false;">Toggle "Sam" skin.</a>

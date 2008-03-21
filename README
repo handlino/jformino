@@ -1,7 +1,7 @@
 
-jQuery-Form -- declarative form generation and binding.
+jFormino -- declarative form generation and binding.
 
-jquery-form provides on-the-fly form generation with:
+jFormino provides on-the-fly form generation with:
 
 1. declarative syntax
 2. good default semantic
@@ -12,7 +12,7 @@ future.
 
 Please visit
 
-    http://st.handlino.com/hdc/?jquery_form
+    http://st.handlino.com/hdc/?jformino
 
 for all information about this jQuery plugin,
 

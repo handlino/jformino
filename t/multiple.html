@@ -8,7 +8,7 @@
     <script type="text/javascript" src="../lib/jformino-datetime.js"> </script>
     <style type="text/css">
         @import "../vendor/yui/calendar/assets/calendar.css"; 
-        @import "../css/jquery-form-datetime-yui.css";
+        @import "../css/jformino-datetime-yui.css";
 
 div#message {
     left: 240px;
@@ -63,7 +63,7 @@ $("form").submit(function() {
         <script type="text/javascript">
             plan({tests: 2 * $("input.dt").size() + 1});
 
-            var $jfcc = $(".jquery-form-calendar-container");
+            var $jfcc = $(".jformino-calendar-container");
             is($jfcc.size(), $("input.dt").size(), "The number of calendar containers is the same as the number of input fields.");
 
             $jfcc.each(function() {

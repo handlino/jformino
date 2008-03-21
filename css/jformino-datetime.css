@@ -1,9 +1,9 @@
 
-.jquery-form-calendar {
+.jformino-calendar {
     border: 2px solid #777;
 }
 
-.jquery-form-calendar-basic {
+.jformino-calendar-basic {
     margin: 0 auto;
     padding: 5px;
     width:220px;
@@ -11,48 +11,48 @@
     border: 2px solid #000;
 }
 
-.jquery-form-calendar-basic .hd {
+.jformino-calendar-basic .hd {
     text-align: center;
     font-size: 1.5em;
 }
 
-.jquery-form-calendar-basic table {
+.jformino-calendar-basic table {
     width:100%;
     table-layout:fixed;
     border-collapse: collapse;
 }
 
-.jquery-form-calendar-basic table th,
-.jquery-form-calendar-basic table td {
+.jformino-calendar-basic table th,
+.jformino-calendar-basic table td {
     border: 1px solid #000;
     text-align: right;
     padding: 3px 4px;
 }
 
-.jquery-form-calendar-basic table td:hover {
+.jformino-calendar-basic table td:hover {
     cursor:pointer;
     _cursor:hand;
     color: #fff;
     background:#000;
 }
 
-.jquery-form-calendar-basic .hd .control {
+.jformino-calendar-basic .hd .control {
     font-size: 0.51em;
 }
 
-.jquery-form-calendar-basic .hd .control a {
+.jformino-calendar-basic .hd .control a {
     color: #00f;
     padding: 1px 2px;
 }
-.jquery-form-calendar-basic .hd .control a:visited {
+.jformino-calendar-basic .hd .control a:visited {
     color: #00f;
 }
-.jquery-form-calendar-basic .hd .control a:hover {
+.jformino-calendar-basic .hd .control a:hover {
     color: #fff;
     background-color: #00f;
 }
 
-.jquery-form-calendar-time {
+.jformino-calendar-time {
     background:#777;
     padding: 2px 2px 4px;
 }
@@ -84,26 +84,26 @@ div.block-ok:hover {
     background: #000;
 }
 
-div.jquery-form-calendar-container {
+div.jformino-calendar-container {
     width: 240px;
     background:#ffe;
     padding: 5px;
     border: 2px solid #000;
 }
 
-div.jquery-form-calendar-container .jquery-form-calendar-basic {
+div.jformino-calendar-container .jformino-calendar-basic {
     background: transparent;
     border: none;
 }
 
-div.jquery-form-calendar-container div.time-hm-select {
-    margin: 5px 0;
+div.jformino-calendar-container div.time-hm-select {
+    margin: 5px;
     font-size: 14pt;
     text-align:center;
     float: none !important;
 }
 
-div.jquery-form-calendar-container div.buttons {
+div.jformino-calendar-container div.buttons {
     width: inherit;
     clear: both;
     text-align: right;
@@ -111,12 +111,12 @@ div.jquery-form-calendar-container div.buttons {
     margin: 0 5px 5px 0;
 }
 
-div.jquery-form-calendar-container div.buttons:after {
+div.jformino-calendar-container div.buttons:after {
     content: " ";
     clear: both;
 }
 
-div.jquery-form-calendar-container a.button {
+div.jformino-calendar-container a.button {
     width: auto;
     float: none;
     display: inline;
@@ -128,7 +128,7 @@ div.jquery-form-calendar-container a.button {
     font-wieght: bold;
 }
 
-div.jquery-form-calendar-container a.button:hover {
+div.jformino-calendar-container a.button:hover {
     background: #999;
 }
 
