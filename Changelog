@@ -1,3 +1,6 @@
+0.21:
+	- With the respect to current 'jQuery Form' plugin, renamed to jFormino
+
 0.20:
 	- Introducing: Actor
 	- actor: datetime-calendar
