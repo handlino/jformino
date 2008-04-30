@@ -1,0 +1,114 @@
+<html>
+  <head>
+    <title>jquery.form date to date test</title>
+    <script type="text/javascript" src="lib/jquery-1.2.3.js"> </script>
+    <script type="text/javascript" src="../lib/jformino.js"> </script>
+    <script type="text/javascript" src="../lib/jformino-datetime.js"> </script>
+    <script type="text/javascript" src="../lib/jformino-date-to-date.js"> </script>
+    <style type="text/css">
+        @import "../vendor/yui/calendar/assets/calendar.css"; 
+        @import "../vendor/yui/calendar/assets/skins/sam/calendar-skin.css";
+        @import "../css/jformino-datetime-yui.css"; 
+    </style>
+  </head>
+  <body>
+    <h1>jquery.form date to date test</h1>
+    <div>
+      <a href="#" class="button" onclick="skin('sam'); return false;">Toggle "Sam" skin.</a>
+      <p>Usage: Click on the field first to get a calendar popup, then click this button.</p>
+    </div>
+
+    <div id="form1"></div>
+
+    <form id="second" class="simple">
+      <div>
+        <fieldset>
+          <legend>Datetime demo 2</legend>
+          <label>Datetime 1</label>
+          <input name="datetime1" id="dtc" />
+
+          <label>Datetime 2, with custom format.</label>
+          <input name="datetime2" id="dtc2" value="2008/03/10 5:00 PM" />
+
+          <label>&nbsp;</label>
+          <input type="submit" />
+          <input type="reset" />
+        </fieldset>
+      </div>
+    </form>
+    <div id="message"></div>
+
+    <script type="text/javascript">
+function skin(s) {
+    $(document.body).toggleClass('yui-skin-' + s);
+};
+
+jQuery("#dtc").formino({
+    act_as: 'datetime-calendar',
+    value: 1205139600
+});
+
+var padding = function(v) {
+    if (Number(v) < 10)
+        return "0" + String(v);
+    return String(v);
+};
+
+var $foo = jQuery("#dtc2");
+var foo_ts = Date.parse( $foo.val() )/1000;
+
+var datetime_renderer = function(ts) {
+    var d = new Date();
+    d.setTime( ts * 1000 );
+    
+    /* 2008/03/19 10:00 AM */
+    var str = d.getFullYear() + "/" + padding(d.getMonth() + 1) + "/" + padding(d.getDate());
+    var hour = d.getHours();
+    var ampm = "AM";
+    if (hour >= 12) {
+        ampm = "PM";
+        hour -= ( hour > 12 ) ? 12: 0;
+    }
+    var time_str = padding( hour ) + ":" + padding( d.getMinutes() ) + " " + ampm;
+
+    return str + " " + time_str;
+}
+
+$("form#second").submit(function() {
+    $("#message").html("You just submit that form:<pre>" + $(this).serialize() + "</pre>");
+    return false;
+});
+
+st = jQuery("#dtc2").formino({
+    act_as: 'datetime-calendar',
+    value: foo_ts,
+    render_as: datetime_renderer,
+    toString: datetime_renderer
+});
+
+$("#form1").formino({
+    legend: 'Datetime demo',
+    params: [
+        {
+            label: 'Date One', name: 'd1', type: 'date-to-date'
+        }
+    ],
+    buttons: [
+        {
+            "type": "submit",
+            "label": "Go",
+            "value": "go"
+        },
+        {
+            "type": "reset",
+            "label": "Reset"
+        }
+    ]
+}).submit(function() {
+    $("#message").html("You just submit that form:<pre>" + $(this).serialize() + "</pre>");
+    return false;
+});
+
+    </script>
+  </body>
+</html>
