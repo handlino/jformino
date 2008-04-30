@@ -52,9 +52,9 @@
 		wrap.appendChild(scrollbar);
 		scroller.range = {min: parseInt(scroller.style.left), max: parseInt(scrollline.style.left) + scrollline.offsetWidth - scroller.offsetWidth};
 		function asjust() {
-		        wrap.style.position = 'absolute';
-		        wrap.style.left = pageX(target) + 'px';
-		        wrap.style.top = pageY(target) + 'px';
+            wrap.style.position = 'absolute';
+            wrap.style.left = pageX(target) + 'px';
+            wrap.style.top = pageY(target) + 'px';
 			scrollline.style.top = (scrollbar.offsetHeight/2 -2) + 'px';
 			scrollline.style.left = '8px';
 			scrollline.style.width = (scrollbar.offsetWidth - 24) + 'px';
@@ -71,19 +71,19 @@
 			scroller.init = parseInt(scroller.style.left);
 			wrap.onmousemove = function (event) {
 				var pos = getMousePosition(event);
-					var posNow = scroller.init + pos[0] - scroller.mouseInit[0];
-					if (posNow > scroller.range.max) posNow = scroller.range.max;
-					if (posNow < scroller.range.min) posNow = scroller.range.min;
-					scroller.style.left = posNow + 'px';
-					target.value = parseInt((posNow - scroller.range.min)/(scroller.range.max - scroller.range.min) * 100 + 0);
-					input.value = parseInt((posNow - scroller.range.min)/(scroller.range.max - scroller.range.min) * 100 + 0);
+                var posNow = scroller.init + pos[0] - scroller.mouseInit[0];
+                if (posNow > scroller.range.max) posNow = scroller.range.max;
+                if (posNow < scroller.range.min) posNow = scroller.range.min;
+                scroller.style.left = posNow + 'px';
+                target.value = parseInt((posNow - scroller.range.min)/(scroller.range.max - scroller.range.min) * 100 + 0);
+                input.value = parseInt((posNow - scroller.range.min)/(scroller.range.max - scroller.range.min) * 100 + 0);
 			};
 			document.onmouseup = function (event) {
 				wrap.onmousemove = null;
 			};
 		};
 		target.onfocus = function () {
-		        wrap.style.display = 'block';
+            wrap.style.display = 'block';
 			asjust();
 			wrap.onclick = function () {
 				wrap.focus = true;	
@@ -92,8 +92,8 @@
 				wrap.onmousemove = null;
 				if (!wrap.focus) {
 					wrap.style.display = 'none';
-                                        document.onclick = null;
-                                        wrap.focus = true;
+                    document.onclick = null;
+                    wrap.focus = true;
 				}
 				else wrap.focus = false;
 			};

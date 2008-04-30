@@ -1,0 +1,128 @@
+<html>
+  <head>
+    <title>jquery.form separate test</title>
+    <script type="text/javascript" src="lib/jquery-1.2.3.js"> </script>
+    <script type="text/javascript" src="../lib/jformino.js"> </script>
+    <script type="text/javascript" src="../lib/jformino-range-value.js"> </script>
+    <style type="text/css">
+		/* <![CDATA[ */
+		.range-field-wrap {
+			width: 200px; 
+			line-height: 20px;
+			}
+		.range-field-wrap input {
+			float: left;
+			border: 1px solid #333;
+			height: 22px;
+			text-align: right;
+			padding: 0 8px;
+			width: 149px;
+			margin: 0 2px 1px 0;
+			}
+		.range-plus-button {
+			border: 1px solid #333;
+			padding: 0;
+			width: 20px;
+			height: 20px;
+			background: #ccc;
+			text-align: center;
+			color: #fff;
+			cursor: pointer;
+			display: inline;
+			float: left;
+			margin: 0 2px 2px 2px;
+			}
+		.range-minus-button {
+			border: 1px solid #333;
+			width: 20px;
+			height: 20px;
+			background: #ccc;
+			text-align: center;
+			color: #fff;
+			cursor: pointer;
+			float: left;
+			margin: 0 0 2px 1px;
+			}
+		.range-plus-button img, .range-minus-button img {
+			display: block;
+			}
+		.range-scroll-bar {
+			margin-top: 1px;
+			border: 1px solid #333;
+			height: 20px;
+			background: #ccc;
+			position: relative;
+			clear: both;
+			}
+		.range-scroll-line {
+			position: absolute;
+			border: 1px solid #333;
+			height: 0px;
+			z-index: 999;
+			}
+		.range-scroller {
+			position: absolute;
+			border: 1px solid #333;
+			background: #666; 
+			height: 14px;
+			width: 30px; 
+			z-index: 1000;
+			cursor:pointer;
+			}
+		/* ]]> */
+    </style>
+  </head>
+  <body>
+    <h1>jFormino Range Value Test</h1>
+
+    <div id="form1"></div>
+
+    <form id="second" class="simple">
+      <div>
+        <fieldset>
+          <input name="rv1" id="rv1" />
+
+          <label>&nbsp;</label>
+          <input type="submit" />
+          <input type="reset" />
+        </fieldset>
+      </div>
+    </form>
+    <div id="message"></div>
+
+    <script type="text/javascript">
+
+jQuery("#rv1").formino({
+    act_as: 'range-value'
+});
+
+$("#form1").formino({
+    legend: 'Range Value demo',
+    params: [
+        {
+            label: '0~200',
+            name: 'rv2',
+            type: 'range-value',
+            max: 200,
+            min: 0
+        }
+    ],
+    buttons: [
+        {
+            "type": "submit",
+            "label": "Go",
+            "value": "go"
+        },
+        {
+            "type": "reset",
+            "label": "Reset"
+        }
+    ]
+}).submit(function() {
+    $("#message").html("You just submit that form:<pre>" + $(this).serialize() + "</pre>");
+    return false;
+});
+
+    </script>
+  </body>
+</html>
