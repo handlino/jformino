@@ -1,3 +1,6 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
 <html>
   <head>
     <title>jquery.form separate test</title>
@@ -9,19 +12,23 @@
 		.range-field-wrap {
 			width: 200px; 
 			line-height: 20px;
-			}
+            padding: 4px; 
+            border: 1px solid #99f; 
+            background: #fff;
+        }
 		.range-field-wrap input {
 			float: left;
 			border: 1px solid #333;
-			height: 22px;
+			height: 20px;
+			line-height: 20px;
 			text-align: right;
-			padding: 0 8px;
-			width: 149px;
-			margin: 0 2px 1px 0;
-			}
+			padding: 0;
+			width: 150px;
+			margin: 0 2px 2px 0;
+        }
 		.range-plus-button {
 			border: 1px solid #333;
-			padding: 0;
+			padding: 0; 
 			width: 20px;
 			height: 20px;
 			background: #ccc;
@@ -30,8 +37,8 @@
 			cursor: pointer;
 			display: inline;
 			float: left;
-			margin: 0 2px 2px 2px;
-			}
+			margin: 0 0 2px 0;
+        }
 		.range-minus-button {
 			border: 1px solid #333;
 			width: 20px;
@@ -41,11 +48,11 @@
 			color: #fff;
 			cursor: pointer;
 			float: left;
-			margin: 0 0 2px 1px;
-			}
+			margin: 0 2px 2px 0;
+        }
 		.range-plus-button img, .range-minus-button img {
 			display: block;
-			}
+        }
 		.range-scroll-bar {
 			margin-top: 1px;
 			border: 1px solid #333;
@@ -53,22 +60,26 @@
 			background: #ccc;
 			position: relative;
 			clear: both;
-			}
+        }
 		.range-scroll-line {
-			position: absolute;
+            position: absolute;
 			border: 1px solid #333;
 			height: 0px;
-			z-index: 999;
-			}
+            font-size: 0px;
+            line-height: 0px;
+			width: 176px;
+            z-index: 999;
+        }
 		.range-scroller {
-			position: absolute;
 			border: 1px solid #333;
 			background: #666; 
 			height: 14px;
+            font-size: 0px;
+            line-height: 0px;
 			width: 30px; 
 			z-index: 1000;
 			cursor:pointer;
-			}
+        }
 		/* ]]> */
     </style>
   </head>
