@@ -1,0 +1,10 @@
+.yui-calendar td.calcell.inrange {
+	cursor:pointer;
+	color:#FFF;
+	background-color:#FF9900;
+	border:1px solid #FF9900;
+}
+
+.yui-calendar td.calcell.inrange a {
+	color:#FFF;
+}
