@@ -65,6 +65,7 @@ SOFTWARE.
             if (!$.isFunction(params.toFace)) params.toFace = function (val) { return val; };
             if (!$.isFunction(params.toValue)) params.toValue = function (val) {return val;};
             if (!$.isFunction(callback)) callback = function () {};
+            if (!$.isFunction(params.toString)) params.toString = function (val) {return val;};
 
             real.each(function() {
                 var target = jQuery(this);
@@ -78,7 +79,6 @@ SOFTWARE.
                     var face = target.pop.find("input");
                     jQuery("body").append(target.pop);
                     var wrap = target.pop;
-                    target.val(0);
                     if (target.val() < params.min) target.val(params.min);
                     if (target.val() > params.max) target.val(params.max);
 
@@ -86,7 +86,8 @@ SOFTWARE.
                         if (val > params.max) val = params.max;
                         else if (val < params.min) val = params.min;
                         target.val(params.toValue(val));
-                        face.val(params.toFace(val));
+                        //face.val(params.toFace(val));
+                        face.val(params.toString(val));
                         scroller.move(val);
                     };
 
