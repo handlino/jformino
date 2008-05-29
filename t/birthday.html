@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+  <head>
+    <title>jquery.form separate test</title>
+    <script type="text/javascript" src="lib/jquery-1.2.3.js"> </script>
+    <script type="text/javascript" src="../lib/jformino.js"> </script>
+    <script type="text/javascript" src="../lib/jformino-birthday.js"> </script>
+    <style type="text/css">
+        @import "../css/jformino-birthday.css"; 
+    </style>
+  </head>
+  <body>
+    <h1>jFormino Birthday Test</h1>
+
+    <div id="form1"></div>
+
+    <form id="second" class="simple">
+      <div>
+        <fieldset>
+          <input name="bir1" class="bir" /><br/>
+          <input name="bir3" class="bir" /><br/>
+
+          <label>&nbsp;</label>
+          <input type="submit" />
+          <input type="reset" />
+        </fieldset>
+      </div>
+    </form>
+    <div id="message"></div>
+
+    <script type="text/javascript">
+
+jQuery(".bir").formino({
+    act_as: 'birthday'
+});
+
+$("#form1").formino({
+    legend: 'Birthday demo',
+    params: [
+        {
+            name: 'Birthday 2',
+            type: 'birthday'
+        }
+    ],
+    buttons: [
+        {
+            "type": "submit",
+            "label": "Go",
+            "value": "go"
+        },
+        {
+            "type": "reset",
+            "label": "Reset"
+        }
+    ]
+}).submit(function() {
+    $("#message").html("You just submit that form:<pre>" + $(this).serialize() + "</pre>");
+    return false;
+});
+
+    </script>
+  </body>
+</html>

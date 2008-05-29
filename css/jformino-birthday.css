@@ -1,0 +1,111 @@
+body {
+    font-family: "Helvetica Neue", "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
+    font-size: 62.5%;
+}
+.jFormino-birthday input.jFormino-birthday-year {
+    width: 3em;    
+}
+.jFormino-birthday input.jFormino-birthday-month {
+    width: 2em;    
+}
+.jFormino-birthday input.jFormino-birthday-day{
+    width: 2em;    
+}
+.jFormino-birthday-picker {
+    position: absolute;
+    border: 2px solid #666;
+    border-width: 8px 2px 2px;
+    padding: 4px 0 0 4px;
+    background: #ffe;
+    display: none;
+}
+.jFormino-birthday-picker .jFormino-birthday-head {
+    font-size: 200%;
+    font-weight: bold;
+    margin: 0 4px 4px 0;
+    border-bottom: 1px solid #666;
+    color: #666;
+}
+.jFormino-birthday-picker ol {
+    clear: none;
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.jFormino-birthday-picker ol.jFormino-birthday-year li {
+    font-weight: bold;
+    float: left;
+    display: block;
+    list-style: none;
+    margin: 0;
+    padidng: 0;
+    text-align: center;
+}
+.jFormino-birthday-picker ol.jFormino-birthday-year li li,
+.jFormino-birthday-picker ol.jFormino-birthday-month li,
+.jFormino-birthday-picker ol.jFormino-birthday-day li {
+    float: left;
+    margin: 0 4px 4px 0;
+    padidng: 0;
+    border: 1px solid #999;
+    color: #000;
+    text-align: center;
+    font-weight: bold;
+}
+.jFormino-birthday-picker ol.jFormino-birthday-year li li {
+    float: none;
+    color: #999;
+    width: 4em;
+    height: 2em; 
+    line-height: 2em; 
+}
+.jFormino-birthday-picker ol.jFormino-birthday-year li.jFormino-birthday-first {
+    font-size: 120%;
+    width: 3.3em;
+    color: #666;
+}
+.jFormino-birthday-picker ol.jFormino-birthday-year li:hover ol li {
+    color: #000;
+    border-color: #444;
+}
+.jFormino-birthday-picker ol.jFormino-birthday-year li:hover ol li:hover,
+.jFormino-birthday-picker ol.jFormino-birthday-month li:hover,
+.jFormino-birthday-picker ol.jFormino-birthday-day li:hover {
+    color: #fff;
+    background: #0E7CEB;
+    border-color: #0E7CEB;
+    cursor: pointer;
+}
+.jFormino-birthday-picker ol.jFormino-birthday-month li {
+    font-size: 400%;
+    border: 1px solid #aaa;
+    width: 2.725em;
+    height: 2em;
+    line-height: 2em;
+    color: #000;
+}
+.jFormino-birthday-picker ol.jFormino-birthday-day li {
+    font-size: 200%;
+    border: 1px solid #aaa;
+    width: 2.985em;
+    height: 2.275em;
+    line-height: 2.275em;
+}
+.jFormino-birthday-picker ol li.jFormino-birthday-one {
+    clear: left;
+}
+.jFormino-birthday-picker ol li.jFormino-birthday-checked, .jFormino-birthday-picker ol ol li.jFormino-birthday-checked {
+    color: #ffe;
+    background: #f66;
+}
+.jFormino-birthday-picker ol.jFormino-birthday-day li:hover {
+    color: #fff;
+    background: #0E7CEB;
+    border-color: #0E7CEB;
+    cursor: pointer;
+}
+.jFormino-birthday-seperate {
+    padding: 0 5px;
+    font-size: 180%;
+}
