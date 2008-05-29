@@ -13,7 +13,7 @@
         input {
             width: 3em;    
         }
-        #birthday-picker {
+        .birthday-picker {
             position: absolute;
             border: 2px solid #666;
             border-width: 8px 2px 2px;
@@ -21,26 +21,26 @@
             background: #ffe;
             display: none;
         }
-        #birthday-picker .head {
+        .birthday-picker .head {
             font-size: 144%;
             font-weight: bold;
             margin: 0 4px 4px 0;
             border-bottom: 1px solid #666;
             color: #666;
         }
-        #birthday-picker ol {
+        .birthday-picker ol {
             clear: none;
             display: block;
             list-style: none;
             margin: 0;
             padding: 0;
         }
-        #birthday-picker ol.year li.first {
+        .birthday-picker ol.year li.first {
             font-size: 120%;
             width: 3.3em;
             color: #666;
         }
-        #birthday-picker ol.year li {
+        .birthday-picker ol.year li {
             font-weight: bold;
             float: left;
             display: block;
@@ -49,7 +49,7 @@
             padding: 0;
             text-align: center;
         }
-        #birthday-picker ol.year li li {
+        .birthday-picker ol.year li li {
             float: none;
             border: 1px solid #999;
             width: 4em;
@@ -59,17 +59,17 @@
             margin: 0 4px 4px 0;
             color: #999;
         }
-        #birthday-picker ol.year li:hover ol li {
+        .birthday-picker ol.year li:hover ol li {
             color: #000;
             border-color: #444;
         }
-        #birthday-picker ol.year li:hover ol li:hover {
+        .birthday-picker ol.year li:hover ol li:hover {
             color: #fff;
             background: #0E7CEB;
             border-color: #0E7CEB;
             cursor: pointer;
         }
-        #birthday-picker ol.month li {
+        .birthday-picker ol.month li {
             font-size: 400%;
             font-weight: bold;
             float: left;
@@ -82,13 +82,13 @@
             color: #000;
             text-align: center;
         }
-        #birthday-picker ol.month li:hover {
+        .birthday-picker ol.month li:hover {
             color: #fff;
             background: #0E7CEB;
             border-color: #0E7CEB;
             cursor: pointer;
         }
-        #birthday-picker ol.day li {
+        .birthday-picker ol.day li {
             font-size: 200%;
             font-weight: bold;
             float: left;
@@ -101,23 +101,30 @@
             color: #000;
             text-align: center;
         }
-        #birthday-picker ol li.one {
+        .birthday-picker ol li.one {
             clear: left;
         }
-        #birthday-picker ol.day li:hover {
+        .birthday-picker ol li.checked, .birthday-picker ol ol li.checked {
+            color: #ffe;
+            background: #f66;
+        }
+        .birthday-picker ol.day li:hover {
             color: #fff;
             background: #0E7CEB;
             border-color: #0E7CEB;
             cursor: pointer;
         }
+        .seperate {
+            padding: 0 5px;
+            font-size: 180%;
+        }
     </style>
     <script src="jquery-1.2.5.min.js"></script>
     <body>
-    <h1>出生年月日</h1>
-        <input id="year"/>年
-        <input id="month"/>月
-        <input id="day"/>日
-        <div id="birthday-picker"></div>
+        <h1>出生年月日</h1>
+        <div style="position: absolute; left: 50px;">
+            <input class="birthday"/>
+        </div>
     </body>
     <script src="birthday.js"></script>
 </html>
