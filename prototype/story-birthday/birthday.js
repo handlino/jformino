@@ -1,22 +1,32 @@
 (function () {
 
-// http://snippets.dzone.com/posts/show/2099
-function daysInMonth(iMonth, iYear) {
-	return 32 - new Date(iYear, iMonth, 32).getDate();
-}
+params = {yearLabel: "年", monthLabel: "月", dayLabel: "日",
+          yearPickerLabel: "出生年：", monthPickerLabel: "出生月：", dayPickerLabel: "出生日："};
 
-$(".birthday").each(function (params) {
+// http://snippets.dzone.com/posts/show/2099
+var daysInMonth = function (iMonth, iYear) {
+	return 32 - new Date(iYear, iMonth, 32).getDate();
+};
+
+var padding = function (v) {
+    return ( v < 10 ) ? ("0" + v) : v;
+};
+
+$(".birthday").each(function () {
     
     var yearLabel = (params.yearLabel)?params.yearLabel:"/";
     var monthLabel = (params.monthLabel)?params.monthLabel:"/";
     var dayLabel = (params.dayLabel)?params.dayLabel:"";
+    var yearPickerLabel = (params.yearPickerLabel)?params.yearPickerLabel:"Birth Year";
+    var monthPickerLabel = (params.monthPickerLabel)?params.monthPickerLabel:"Birth Month";
+    var dayPickerLabel = (params.dayPickerLabel)?params.dayPickerLabel:"Birth Day";
     var seperate = (params.seperate)?params.seperate:"-";
 
     var target = $(this).hide();
-    var container = $("<span>");
-    var year = $("<input>").attr("readonly", "readonly");
-    var month = $("<input>").attr("readonly", "readonly");
-    var day = $("<input>").attr("readonly", "readonly");
+    var container = $("<span>").addClass("birthday");
+    var year = $("<input>").attr("readonly", "readonly").addClass("year");
+    var month = $("<input>").attr("readonly", "readonly").addClass("month");
+    var day = $("<input>").attr("readonly", "readonly").addClass("day");
     var picker = $("<div>").addClass("birthday-picker").hide();
 
     if (target.val() != "" && target.val().split(seperate).length == 3) {
@@ -69,7 +79,7 @@ $(".birthday").each(function (params) {
             ten.appendTo(tenCon);
             tenCon.appendTo(hundred);
         }
-        $("<div>出生年：</div>").addClass("head").appendTo(picker);
+        $("<div>"+yearPickerLabel+"</div>").addClass("head").appendTo(picker);
         hundred.appendTo(picker);
         $(picker).show();
         setPos();
@@ -86,14 +96,14 @@ $(".birthday").each(function (params) {
                 var val = i;
                 one.appendTo(all);
                 one.click(function () {
-                    month.val(val);
+                    month.val(padding(val));
                     setVal();
                     picker.hide();
                     day.focus();
                 });
             })();
         }
-        $("<div>出生月：</div>").addClass("head").appendTo(picker);
+        $("<div>"+monthPickerLabel+"</div>").addClass("head").appendTo(picker);
         all.appendTo(picker);
         picker.show();
         setPos();
@@ -110,13 +120,13 @@ $(".birthday").each(function (params) {
                 var val = i;
                 one.appendTo(all);
                 one.click(function () {
-                    day.val(val);
+                    day.val(padding(val));
                     setVal();
                     picker.hide();
                 });
             })();
         }
-        $("<div>出生日：</div>").addClass("head").appendTo(picker);
+        $("<div>"+dayPickerLabel+"</div>").addClass("head").appendTo(picker);
         all.appendTo(picker);
         $(picker).show();
         setPos();

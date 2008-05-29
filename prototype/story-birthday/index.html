@@ -10,8 +10,14 @@
             font-family: "Helvetica Neue", "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
             font-size: 62.5%;
         }
-        input {
+        .birthday .year {
             width: 3em;    
+        }
+        .birthday .month {
+            width: 2em;    
+        }
+        .birthday .day {
+            width: 2em;    
         }
         .birthday-picker {
             position: absolute;
@@ -22,7 +28,7 @@
             display: none;
         }
         .birthday-picker .head {
-            font-size: 144%;
+            font-size: 200%;
             font-weight: bold;
             margin: 0 4px 4px 0;
             border-bottom: 1px solid #666;
@@ -35,35 +41,45 @@
             margin: 0;
             padding: 0;
         }
-        .birthday-picker ol.year li.first {
-            font-size: 120%;
-            width: 3.3em;
-            color: #666;
-        }
         .birthday-picker ol.year li {
             font-weight: bold;
             float: left;
             display: block;
             list-style: none;
             margin: 0;
-            padding: 0;
+            padidng: 0;
             text-align: center;
+        }
+        .birthday-picker ol.year li li,
+        .birthday-picker ol.month li,
+        .birthday-picker ol.day li {
+            float: left;
+            margin: 0 4px 4px 0;
+            padidng: 0;
+            border: 1px solid #999;
+            color: #000;
+            text-align: center;
+            font-weight: bold;
         }
         .birthday-picker ol.year li li {
             float: none;
-            border: 1px solid #999;
+            color: #999;
             width: 4em;
             height: 2em; 
             line-height: 2em; 
-            padding: 0;
-            margin: 0 4px 4px 0;
-            color: #999;
+        }
+        .birthday-picker ol.year li.first {
+            font-size: 120%;
+            width: 3.3em;
+            color: #666;
         }
         .birthday-picker ol.year li:hover ol li {
             color: #000;
             border-color: #444;
         }
-        .birthday-picker ol.year li:hover ol li:hover {
+        .birthday-picker ol.year li:hover ol li:hover,
+        .birthday-picker ol.month li:hover,
+        .birthday-picker ol.day li:hover {
             color: #fff;
             background: #0E7CEB;
             border-color: #0E7CEB;
@@ -71,35 +87,18 @@
         }
         .birthday-picker ol.month li {
             font-size: 400%;
-            font-weight: bold;
-            float: left;
             border: 1px solid #aaa;
             width: 2.725em;
             height: 2em;
             line-height: 2em;
-            padding: 0;
-            margin: 0 4px 4px 0;
             color: #000;
-            text-align: center;
-        }
-        .birthday-picker ol.month li:hover {
-            color: #fff;
-            background: #0E7CEB;
-            border-color: #0E7CEB;
-            cursor: pointer;
         }
         .birthday-picker ol.day li {
             font-size: 200%;
-            font-weight: bold;
-            float: left;
             border: 1px solid #aaa;
             width: 2.985em;
             height: 2.275em;
             line-height: 2.275em;
-            padding: 0;
-            margin: 0 4px 4px 0;
-            color: #000;
-            text-align: center;
         }
         .birthday-picker ol li.one {
             clear: left;
