@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+  <head>
+    <title>jquery.form separate test</title>
+    <script type="text/javascript" src="lib/jquery-1.2.3.js"> </script>
+    <script type="text/javascript" src="../lib/jformino.js"> </script>
+    <script type="text/javascript" src="../lib/jformino-range-value.js"> </script>
+    <style type="text/css">
+        @import "../css/jformino-range-value.css"; 
+    </style>
+  </head>
+  <body>
+    <h1>jFormino Range Value Test</h1>
+
+    <div id="form1"></div>
+
+    <form id="second" class="simple">
+      <div>
+        <fieldset>
+          <input name="rv1" id="rv1" />
+
+          <label>&nbsp;</label>
+          <input type="submit" />
+          <input type="reset" />
+        </fieldset>
+      </div>
+    </form>
+    <div id="message"></div>
+
+    <script type="text/javascript">
+
+jQuery("#rv1").formino({
+    act_as: 'range-value'
+});
+
+$("#form1").formino({
+    legend: 'Range Value demo',
+    params: [
+        {
+            label: '0~200',
+            name: 'rv2',
+            type: 'range-value',
+            max: 200,
+            min: 0
+        }
+    ],
+    buttons: [
+        {
+            "type": "submit",
+            "label": "Go",
+            "value": "go"
+        },
+        {
+            "type": "reset",
+            "label": "Reset"
+        }
+    ]
+}).submit(function() {
+    $("#message").html("You just submit that form:<pre>" + $(this).serialize() + "</pre>");
+    return false;
+});
+
+    </script>
+  </body>
+</html>
