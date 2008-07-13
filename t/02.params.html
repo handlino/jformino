@@ -11,7 +11,7 @@
     <pre id="test">
       <script type="text/javascript">
 
-plan({ tests: 13 });
+plan({ tests: 14 });
 
 $("<div/>").attr({ id: "form1" }).prependTo(document.body).formino({
     legend: "Test Purpose Form",
@@ -40,7 +40,8 @@ $("<div/>").attr({ id: "form1" }).prependTo(document.body).formino({
 });
 
 // 4 labels
-is( $("#form1 label").size(), 4 );
+is( $("#form1 label.field").size(), 4 );
+is( $("#form1 label.value").size(), 3 );
 
 // exaime each label
 is( $("#form1 label").slice(0,1).text(), 'Field One' );
