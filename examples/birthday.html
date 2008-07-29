@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+    	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <title>Birthday</title>
+    <style type="text/css">
+        @import url(../css/jformino-birthday.css);
+    </style>
+    <script src="../t/lib/jquery-1.2.6.min.js"></script>
+    <script src="../lib/jformino.js"></script>
+    <script src="../lib/jformino-birthday.js"></script>
+    </head>
+    <body>
+      <div style="margin: 0 auto; width: 950px;">
+        <h1>出生年月日</h1>
+        <div style="float: left; width: 700px; margin: 0 25px 0 0;">
+          Lorem IPsum.
+        </div>
+        <div style="float: left; width: 225px; margin: 0;">
+          <div id="birthday"></div>
+        </div>
+        <div style="clear:both">&nbsp;</div>
+      </div>
+    </body>
+    <script type="text/javascript">
+        $(function() {
+                $("#birthday").formino({
+                    params: {
+                        bd: {
+                            "type": "birthday",
+                            "label": "Birthday"
+                        }
+                    }
+                });
+        });
+    </script>
+</html>
