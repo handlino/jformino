@@ -5,9 +5,10 @@
     <script type="text/javascript" src="../lib/jformino.js"> </script>
     <script type="text/javascript" src="../lib/jformino-datetime.js"> </script>
     <style type="text/css">
+        @import "../css/jformino-time-picker.css"; 
+        @import "../css/jformino-datetime-yui.css"; 
         @import "../vendor/yui/calendar/assets/calendar.css"; 
         @import "../vendor/yui/calendar/assets/skins/sam/calendar-skin.css";
-        @import "../css/jformino-datetime-yui.css"; 
     </style>
   </head>
   <body>
@@ -29,6 +30,9 @@
           <label>Datetime 2, with custom format.</label>
           <input name="datetime2" id="dtc2" value="2008/03/10 5:00 PM" />
 
+          <label>Time</label>
+          <input name="datetime3" id="dtc3" value="" />
+
           <label>&nbsp;</label>
           <input type="submit" />
           <input type="reset" />
@@ -45,6 +49,9 @@ function skin(s) {
 jQuery("#dtc").formino({
     act_as: 'datetime-calendar',
     value: 1205139600
+});
+jQuery("#dtc3").formino({
+    act_as: 'time-picker'
 });
 
 var padding = function(v) {

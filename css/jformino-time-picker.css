@@ -1,0 +1,47 @@
+
+#jformino-time-picker {
+    position: absolute;
+    padding: 12px;
+    background: #06c;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -moz-box-shadow: #999 6px 6px 2px;
+    -webkit-box-shadow: #999 6px 6px 2px;
+    -opera-box-shadow: #999 6px 6px 2px;
+}
+
+#jformino-time-picker #time-temp {
+    width: 3em;
+    padding: 0;
+    font-size: 120%;
+    text-align: center;
+}
+
+#jformino-time-picker #picker {
+    margin: 2px 0 0;
+    background: url('img/time-picker-bg.png');
+    width: 320px;
+    height: 25px;
+    position: relative;
+}
+
+#jformino-time-picker #cursor {
+    margin: 0;
+    padding: 0;
+    top: 25px;
+    left: 12px;
+    width: 8px;
+    height: 8px;
+    border: none;
+    background: #f00;
+    position: absolute;
+    display: none;
+}
+
+#jformino-time-picker .error {
+    padding: 8px;
+    font-size: 80%;
+    color: #f66;
+    display: none;
+}
