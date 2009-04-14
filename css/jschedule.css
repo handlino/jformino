@@ -1,0 +1,315 @@
+#jformino-schedule {
+}
+#jformino-schedule table {
+    border-collapse: collapse;
+    text-align: left;
+}
+#jformino-schedule caption {
+    margin-top: 1em;
+    font-size: 150%;
+    text-align: left;
+    padding-right: 1.7em;
+    line-height: 1;
+    font-weight: bold;
+}
+#jformino-schedule tbody th {
+    width: 11em;
+}
+#jformino-schedule thead th {
+    border-top: 1px solid #999;
+    /*text-align: center;*/
+    /*width: 14em;*/
+    min-width: 11em;
+    width: 11em;
+}
+html>body #jformino-schedule thead th {
+    min-width: 11em;
+    width: auto;
+}
+#jformino-schedule thead td {
+    border-top: 1px solid #999;
+}
+#jformino-schedule thead th:first-child {
+    width: auto;
+}
+#jformino-schedule tbody th,
+#jformino-schedule tbody td {
+    border-top: 1px solid #999;
+    text-align: left;
+}
+#jformino-schedule tbody td {
+    font-size: 80%;
+}
+#jformino-schedule caption div,
+#jformino-schedule thead tr div,
+#jformino-schedule tfoot tr div,
+#jformino-schedule tbody tr div {
+    border-color: #fff;
+    position: relative;
+}
+#jformino-schedule tbody tr:nth-child(2n+1) div {
+    border-color: #f0f0f0;
+}
+#jformino-schedule tbody td:nth-child(2) {
+    border-right: 1px solid #ddd;
+}
+#jformino-schedule tbody td[colspan] {
+    text-align: center;
+    border-right: none;
+}
+#jformino-schedule tbody tr:nth-child(2n) {
+    background: #fff;
+}
+#jformino-schedule tbody tr:nth-child(2n+1) {
+    background: #f0f0f0;
+}
+#jformino-schedule th,
+#jformino-schedule td {
+    padding: 3px;
+}
+#jformino-schedule div {
+    min-height: 1.5em;
+    padding: 8px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border: none;
+    /*border: 2px solid transparent;*/
+    /*position: relative;*/
+}
+#jformino-schedule .editCell div {
+    min-height: 1em;
+    border-color: #aaa;
+}
+#jformino-schedule caption div:hover,
+#jformino-schedule thead th div:hover,
+#jformino-schedule tbody th div:hover,
+#jformino-schedule tbody td div:hover,
+#jformino-schedule .selected {
+    background: #ffb !important;
+    border: 2px solid #dd0 !important;
+    padding: 6px;
+    cursor: pointer;
+}
+#jformino-schedule thead th div {
+    padding-left: 16px;
+}
+#jformino-schedule thead th div:hover {
+    padding-left: 14px;
+}
+#jformino-schedule tbody td .hover {
+    background: #bbb !important;
+    border: 2px solid #ddd !important;
+    padding: 6px;
+}
+
+#jformino-timeForm .sub,
+#jformino-inlineForm .sub,
+#jformino-blockForm .sub {
+    padding: 3px;
+    text-align: right;
+}
+
+#jformino-timeForm,
+#jformino-inlineForm,
+#jformino-blockForm {
+    z-index: 100;
+    font-size: 75%;
+    position: absolute;
+    padding: 0.8em;
+    width: 24em;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    background: #069;
+    display: none;
+    color: #fff;
+}
+#jformino-timeForm {
+    width: 16em;
+}
+#jformino-blockForm textarea,
+#jformino-inlineForm input {
+    font-size: 133%;
+    width: 17.3em;
+    padding: 0.1em;
+    display: block;
+}
+#jformino-blockForm textarea {
+    height: 4em;
+}
+#jformino-timeForm input {
+    font-size: 120%;
+    width: 5em;
+    padding: 0.1em 0.3em;
+    text-align: center;
+}
+#jformino-timeForm .sub input,
+#jformino-blockForm .sub input,
+#jformino-inlineForm .sub input {
+    width: 6em;
+    font-size: 100%;
+    display: inline;
+}
+#jformino-timeForm a,
+#jformino-blockForm a,
+#jformino-inlineForm a {
+    color: #f00;
+}
+
+#jformino-schedule .editCell {
+    background: #aaa;
+    border: none;
+    width: 2em;
+}
+
+#jformino-schedule .edit,
+#jformino-schedule .expand,
+#jformino-schedule .contract,
+#jformino-schedule .addTime,
+#jformino-schedule .addTrack,
+#jformino-schedule .removeTrack,
+#jformino-schedule .removeTime,
+#jformino-schedule .removeDay {
+    text-indent: -1000000px;
+    position: absolute;
+    display: block;
+    overflow: none;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    top: 5px;
+    right: 5px;
+}
+#jformino-schedule .edit {
+    background: url('img/jschedule/page_white_edit.gif') no-repeat center center;
+    right: 25px;
+}
+/*html>body #jformino-schedule caption .edit {*/
+    /*background: url('img/jschedule/page_white_edit.png) no-repeat center center;*/
+    /*right: 25px;*/
+/*}*/
+#jformino-schedule caption .edit {
+    right: 75px;
+}
+html>body #jformino-schedule caption .edit {
+    right: 25px;
+}
+html>body #jformino-schedule .edit {
+    background-image: url('img/jschedule/page_white_edit.png');
+}
+html>body #jformino-schedule div:hover .edit {
+    background-image: url('img/jschedule/page_white_edit_hover.png');
+    border-bottom: 1px solid #00f;
+}
+#jformino-schedule thead th:only-of-type .edit,
+#jformino-schedule tbody tr:only-of-type th .edit,
+#jformino-schedule table:only-of-type caption .edit,
+#jformino-schedule tbody td:last-child .edit {
+    right: 5px;
+}
+/*#jformino-schedule tbody td:nth-child(2) .edit {*/
+    /*right: 33px;*/
+/*}*/
+#jformino-schedule tbody td[colspan] .edit {
+    right: 25px;
+}
+#jformino-schedule tbody td:only-of-type[colspan="1"] .edit {
+    right: 5px;
+}
+#jformino-schedule .addTime,
+#jformino-schedule .addTrack {
+    background: url("img/jschedule/add.gif") no-repeat center center;
+    top: 0;
+}
+html>body #jformino-schedule .addTime,
+html>body #jformino-schedule .addTrack {
+    background-image: url("img/jschedule/add.png");
+}
+#jformino-schedule .removeTrack,
+#jformino-schedule .removeTime,
+#jformino-schedule .removeDay {
+    background: url("img/jschedule/delete.gif") no-repeat center center;
+}
+#jformino-schedule .removeDay {
+    right: 50px;
+}
+html>body #jformino-schedule .removeTrack,
+html>body #jformino-schedule .removeTime,
+html>body #jformino-schedule .removeDay {
+    background-image: url("img/jschedule/delete.png");
+}
+html>body #jformino-schedule div:hover .removeTrack,
+html>body #jformino-schedule div:hover .removeTime,
+html>body #jformino-schedule div:hover .removeDay {
+    background-image: url("img/jschedule/delete_hover.png");
+    border-bottom: 1px solid #00f;
+}
+html>body #jformino-schedule .removeDay {
+    right: 5px;
+}
+#jformino-schedule .expand {
+    background: url("img/jschedule/control_end.gif") no-repeat center center;
+    /*width: 28px;*/
+    /*background: url("img/jschedule/control.png") no-repeat center center;*/
+}
+#jformino-schedule .selected .expand {
+    background-image: url("img/jschedule/control_end_selected.gif");
+}
+html>body #jformino-schedule .expand {
+    background-image: url("img/jschedule/control_end.png");
+}
+html>body #jformino-schedule div:hover .expand {
+    background-image: url("img/jschedule/control_end_hover.png");
+    border-bottom: 1px solid #00f;
+}
+#jformino-schedule .contract {
+    background: url("img/jschedule/control_start.gif") no-repeat center center;
+}
+#jformino-schedule .selected .contract {
+    background-image: url("img/jschedule/control_start_selected.gif");
+}
+html>body #jformino-schedule .contract {
+    background-image: url("img/jschedule/control_start.png");
+}
+html>body #jformino-schedule div:hover .contract {
+    background-image: url("img/jschedule/control_start_hover.png");
+    border-bottom: 1px solid #00f;
+}
+#jformino-schedule .edit:hover,
+#jformino-schedule .expand:hover,
+#jformino-schedule .contract:hover,
+#jformino-schedule .addTime:hover,
+#jformino-schedule .addTrack:hover,
+#jformino-schedule .removeTrack:hover,
+#jformino-schedule .removeTime:hover,
+#jformino-schedule .removeDay:hover {
+    border-bottom-color: #f00 !important;
+}
+
+#jformino-schedule .addDay {
+    display: inline;
+    font-size: 1.3em;
+    cursor: pointer;
+    color: #333;
+    border: 2px solid #39c;
+    margin: 0.5em 4px 0.5em 300px;
+    padding: 6px 10px 6px 34px;
+    background: #adf url('img/jschedule/112_24.gif') no-repeat 6px center;
+    float: left;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+}
+
+#jformino-schedule .addDay:hover {
+    background: #fda url('img/jschedule/112_24_hover.gif') no-repeat 6px center;
+    border-color: #c93;
+}
+html>body #jformino-schedule .addDay {
+    background: #adf url('img/jschedule/112_24.png') no-repeat 6px center;
+}
+
+#jformino-schedule tbody .insert {
+    background: url('img/jschedule/arrow_right.png') no-repeat 0 0;
+}
+#jformino-schedule thead .insert {
+    background: url('img/jschedule/arrow_down.png') no-repeat 0 0;
+}
